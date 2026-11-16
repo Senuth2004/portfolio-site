@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senuth Dintharu — Cybersecurity enthusiast</title>
+  <meta name="description" content="Portfolio of Senuth Dintharu, IT undergraduate at the University of Moratuwa focused on cybersecurity, CTFs and secure software engineering.">
+  <meta name="theme-color" content="#e4e4e4">
+  <link rel="icon" href="data:,">
+  <script>
+    // Set the theme before first paint: saved choice, else the system setting.
+    (() => {
+      let saved;
+      try { saved = localStorage.getItem('theme'); } catch {}
+      document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top"><i></i>Senuth<span> Dintharu</span></a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" type="button" aria-label="Dark mode">Dark</button>
+    </nav>
+  </header>
+
+  <!-- Layers, back to front: dark name, portrait, white name (shown only where it crosses the portrait), copy. -->
+  <section class="hero" id="top">
+    <h1 class="sr-only">Senuth Dintharu</h1>
+    <div class="name back" aria-hidden="true">
+      <div class="track"><div class="run"><span>Senuth Dintharu —&nbsp;</span><span>Senuth Dintharu —&nbsp;</span><span>Senuth Dintharu —&nbsp;</span><span>Senuth Dintharu —&nbsp;</span></div></div>
+    </div>
+    <img class="portrait" src="assets/portrait.webp" width="1301" height="1209" alt="Black and white profile portrait of Senuth Dintharu">
+    <div class="name front" aria-hidden="true">
+      <div class="track"><div class="run"><span>Senuth Dintharu —&nbsp;</span><span>Senuth Dintharu —&nbsp;</span><span>Senuth Dintharu —&nbsp;</span><span>Senuth Dintharu —&nbsp;</span></div></div>
+    </div>
+    <ul class="hero-links">
+      <li><a href="https://github.com/Senuth2004" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="mailto:dintharu2023@gmail.com">Email</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+    <p class="role">Cybersecurity Enthusiast<br>IT Undergraduate</p>
+  </section>
+
+  <main>
+    <section id="about" class="panel">
+      <h2><span>01</span> About</h2>
+      <p>I study at the Faculty of Information Technology, University of Moratuwa. My focus is cybersecurity: CTFs, web security and secure software engineering. I am also exploring software engineering with AI agents.</p>
+      <blockquote>“Trust, but verify — then write a test for it.”</blockquote>
+    </section>
+
+    <section id="skills" class="panel">
+      <h2><span>02</span> Skills</h2>
+      <div class="skills" id="skill-list"></div> <!-- filled from content.js -->
+    </section>
+
+    <section id="projects" class="panel">
+      <h2><span>03</span> Projects</h2>
+      <div id="project-list" class="projects"></div> <!-- filled from content.js -->
+      <noscript><p>See my projects on <a href="https://github.com/Senuth2004?tab=repositories">GitHub</a>.</p></noscript>
+    </section>
+
+    <section id="contact" class="panel">
+      <h2><span>04</span> Contact</h2>
+      <p>Want to talk security, CTFs or a project? Get in touch.</p>
+      <p class="actions">
+        <a class="btn primary" href="mailto:dintharu2023@gmail.com">dintharu2023@gmail.com</a>
+        <a class="btn" href="https://github.com/Senuth2004" target="_blank" rel="noopener">github.com/Senuth2004</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>© Senuth Dintharu</footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
