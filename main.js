@@ -41,12 +41,3 @@ toggle.addEventListener('click', () => {
   showTheme();
 });
 showTheme();
-
-// Hero depth: pointer position goes into --mx/--my; the name shifts with it, the portrait stays still (see style.css).
-if (matchMedia('(prefers-reduced-motion: no-preference) and (pointer: fine)').matches) {
-  const hero = document.querySelector('.hero');
-  addEventListener('pointermove', (e) => {
-    hero.style.setProperty('--mx', (e.clientX / innerWidth - 0.5).toFixed(3));
-    hero.style.setProperty('--my', (e.clientY / innerHeight - 0.5).toFixed(3));
-  });
-}

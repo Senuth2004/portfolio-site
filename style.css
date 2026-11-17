@@ -70,12 +70,10 @@ a { color: inherit; }
 .nav nav a:hover, .hero-links a:hover { color: var(--green-ink); }
 
 /* Hero. The name runs behind the portrait in dark ink; a second, white copy sits in front of the portrait
-   and is masked by the portrait's own shape, so letters turn white exactly where they cross the figure.
-   --mx/--my (pointer position, set in main.js) shift the name; the portrait never moves. */
+   and is masked by the portrait's own shape, so letters turn white exactly where they cross the figure. */
 .hero {
   --ph: 90%;   /* portrait height */
   --ny: 56%;   /* vertical centre of the name band: ear level */
-  --name-x: calc(var(--mx, 0) * -44px); --name-y: calc(var(--my, 0) * -18px);
   position: relative;
   height: calc(100svh - 3.6rem);
   min-height: 30rem;
@@ -93,15 +91,12 @@ a { color: inherit; }
   height: var(--ph); width: auto;
   transform: translateX(-50%);
 }
-.name.back { translate: var(--name-x) var(--name-y); }
 .name.front {
   color: var(--name-front);
   /* same box as .portrait: centred, bottom-anchored, --ph tall */
   -webkit-mask: url(assets/portrait.webp) 50% 100% / auto var(--ph) no-repeat;
   mask: url(assets/portrait.webp) 50% 100% / auto var(--ph) no-repeat;
 }
-.name.front .track { translate: var(--name-x) var(--name-y); } /* the mask stays put; the letters move with the back copy */
-.name.back, .name.front .track { transition: translate 0.4s ease-out; }
 
 .hero-links, .role { position: absolute; bottom: clamp(1.2rem, 4vh, 2.4rem); margin: 0; }
 .hero-links { left: var(--gutter); padding: 0; list-style: none; font-size: 0.9rem; font-weight: 500; line-height: 2; }
